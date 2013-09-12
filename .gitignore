@@ -1,2 +1,5 @@
-fuel/app/logs/*/*/*
-fuel/app/cache/*/*
+/app/logs/*/*/*
+/app/cache/*/*
+/skyroof/vendor/*
+!/skyroof/vendor/.gitkeep
+/composer.lock

@@ -1,0 +1,29 @@
+{
+    "name": "skyroof",
+    "type": "metapackage",
+    "description": "The Skyroof CMS",
+    "keywords": ["cms"],
+    "homepage": "http://github.com/niaeashes/skyroof",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nia",
+            "email": "nia.eashes@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "monolog/monolog": "1.5.*",
+        "fuelphp/upload": "dev-master"
+    },
+    "suggest": {
+        "mustache/mustache": "Allow Mustache templating with the Parser package",
+        "smarty/smarty": "Allow Smarty templating with the Parser package",
+        "twig/twig": "Allow Twig templating with the Parser package",
+        "mthaml/mthaml": "Allow Haml templating with Twig supports with the Parser package"
+    },
+    "config": {
+        "vendor-dir": "skyroof/vendor"
+    },
+    "minimum-stability": "dev"
+}
