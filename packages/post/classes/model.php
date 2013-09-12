@@ -4,6 +4,12 @@ namespace Post;
 
 abstract class Model extends \Orm\Model
 {
+	protected static $_title = 'title';
+
+	protected static $_content = 'content';
+
+	protected static $_publish_conditions = array('where' => array('status', '=', 'published'));
+
 	public static function form_map($type = null)
 	{
 		if ( ! empty($type) )
@@ -38,5 +44,17 @@ abstract class Model extends \Orm\Model
 	public function content()
 	{
 		return $this->{static::$_content};
+	}
+
+	public static function find($id = null, array $options = array())
+	{
+		if ( $id == 'published' )
+		{
+			$id = 'all';
+
+			$options = Arr::merge($options, static::$_publish_conditions);
+		}
+
+		return parent::find($id, $options);
 	}
 }
