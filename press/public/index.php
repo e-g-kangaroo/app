@@ -5,8 +5,8 @@ ini_set('display_errors', 1);
 
 define('DOCROOT', __DIR__.DIRECTORY_SEPARATOR);
 define('APPPATH', realpath(__DIR__.'/../app/').DIRECTORY_SEPARATOR);
-define('PKGPATH', realpath(__DIR__.'/../packages/').DIRECTORY_SEPARATOR);
-define('COREPATH', realpath(__DIR__.'/../core/').DIRECTORY_SEPARATOR);
+define('PKGPATH', realpath(__DIR__.'/../../packages/').DIRECTORY_SEPARATOR);
+define('COREPATH', realpath(__DIR__.'/../../core/').DIRECTORY_SEPARATOR);
 
 defined('FUEL_START_TIME') or define('FUEL_START_TIME', microtime(true));
 defined('FUEL_START_MEM') or define('FUEL_START_MEM', memory_get_usage());

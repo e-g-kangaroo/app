@@ -8,7 +8,7 @@ abstract class Model extends \Orm\Model
 
 	protected static $_content = 'content';
 
-	protected static $_publish_conditions = array('where' => array('status', '=', 'published'));
+	protected static $_publish_conditions = array('where' => array(array('status', '=', 'published')));
 
 	public static function form_map($type = null)
 	{
@@ -52,7 +52,7 @@ abstract class Model extends \Orm\Model
 		{
 			$id = 'all';
 
-			$options = Arr::merge($options, static::$_publish_conditions);
+			$options = \Arr::merge($options, static::$_publish_conditions);
 		}
 
 		return parent::find($id, $options);

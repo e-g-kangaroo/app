@@ -14,4 +14,11 @@ return array(
 	'package_paths' => array(
 		PKGPATH
 	),
+	'always_load' => array(
+		'packages' => array(
+			'orm',
+			'post',
+			'skyroof',
+		),
+	),
 );
