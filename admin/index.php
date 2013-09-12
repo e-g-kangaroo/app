@@ -4,7 +4,7 @@ error_reporting(-1);
 ini_set('display_errors', 1);
 
 define('DOCROOT', __DIR__.DIRECTORY_SEPARATOR);
-define('APPPATH', realpath(__DIR__.'/../skyroof/').DIRECTORY_SEPARATOR);
+define('APPPATH', realpath(__DIR__.'/../skyroof/admin/').DIRECTORY_SEPARATOR);
 define('PKGPATH', realpath(__DIR__.'/../packages/').DIRECTORY_SEPARATOR);
 define('COREPATH', realpath(__DIR__.'/../core/').DIRECTORY_SEPARATOR);
 
