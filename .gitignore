@@ -1,5 +1,5 @@
 /app/logs/*/*/*
 /app/cache/*/*
-/skyroof/vendor/*
-!/skyroof/vendor/.gitkeep
+/vendor/*
+!/vendor/.gitkeep
 /composer.lock

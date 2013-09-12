@@ -23,7 +23,7 @@
         "mthaml/mthaml": "Allow Haml templating with Twig supports with the Parser package"
     },
     "config": {
-        "vendor-dir": "skyroof/vendor"
+        "vendor-dir": "vendor"
     },
     "minimum-stability": "dev"
 }
