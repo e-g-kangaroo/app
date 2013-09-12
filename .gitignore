@@ -1,7 +1,11 @@
 /press/app/logs/*/*/*
 /press/app/cache/*/*
+/press/app/tmp/*
+!/press/app/tmp/.gitkeep
 /admin/app/logs/*/*/*
 /admin/app/cache/*/*
+/admin/app/tmp/*
+!/admin/app/tmp/.gitkeep
 /packages/post/classes/model/*
 /vendor/*
 !/vendor/.gitkeep
