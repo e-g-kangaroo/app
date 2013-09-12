@@ -5,6 +5,7 @@ ini_set('display_errors', 1);
 
 define('DOCROOT', __DIR__.DIRECTORY_SEPARATOR);
 define('APPPATH', realpath(__DIR__.'/../app/').DIRECTORY_SEPARATOR);
+define('PRESSPATH', realpath(__DIR__.'/../../press/app/').DIRECTORY_SEPARATOR);
 define('PKGPATH', realpath(__DIR__.'/../../packages/').DIRECTORY_SEPARATOR);
 define('COREPATH', realpath(__DIR__.'/../../core/').DIRECTORY_SEPARATOR);
 
