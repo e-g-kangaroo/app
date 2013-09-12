@@ -1,7 +1,6 @@
 <?php
 
 return array(
-	'profiling' => true,
 	'security' => array(
 		'uri_filter'       => array('htmlentities'),
 		'output_filter'  => array('Security::htmlentities'),
