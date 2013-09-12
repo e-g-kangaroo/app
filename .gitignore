@@ -1,5 +1,7 @@
-/app/logs/*/*/*
-/app/cache/*/*
+/press/app/logs/*/*/*
+/press/app/cache/*/*
+/admin/app/logs/*/*/*
+/admin/app/cache/*/*
 /vendor/*
 !/vendor/.gitkeep
 /composer.lock
