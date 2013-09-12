@@ -17,5 +17,6 @@ defined('FUEL_START_MEM') or define('FUEL_START_MEM', memory_get_usage());
 require APPPATH.'bootstrap.php';
 
 Package::load('oil');
+Package::load('moon');
 
 Oil\Command::init($_SERVER['argv']);
