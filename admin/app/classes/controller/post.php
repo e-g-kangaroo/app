@@ -18,6 +18,7 @@ class Controller_Post extends \Fuel\Core\Controller_Template
 		}
 
 		$data = array(
+			'type' => $type,
 			'posts' => $post_class::find('all'),
 		);
 
@@ -36,6 +37,7 @@ class Controller_Post extends \Fuel\Core\Controller_Template
 		}
 
 		$data = array(
+			'type' => $type,
 			'post' => $post_class::find($id),
 		);
 
