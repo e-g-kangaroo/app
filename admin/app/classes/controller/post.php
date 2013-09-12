@@ -46,6 +46,18 @@ class Controller_Post extends \Fuel\Core\Controller_Template
 			Response::redirect('post/'.$type);
 		}
 
+		if ( Input::method() == 'POST' and Security::check_token() )
+		{
+			Log::info('ok');
+
+			foreach ( $post_class::form_map() as $name => $property )
+			{
+				$data['post']->$name = Input::post($name);
+			}
+
+			$data['post']->save();
+		}
+
 		$this->template->title = $data['post']->title();
 		$this->template->content = View::forge('post/edit', $data);
 	}

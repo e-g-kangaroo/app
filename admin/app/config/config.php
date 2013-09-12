@@ -10,6 +10,7 @@ return array(
 			'Fuel\\Core\\ViewModel',
 			'Closure',
 		),
+		'csrf_token_key' => 'skyroof_csrf_token',
 	),
 	'package_paths' => array(
 		PKGPATH

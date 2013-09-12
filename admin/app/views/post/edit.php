@@ -4,7 +4,8 @@
 			<li><?= $post->title() ?></li>
 		</ol>
 	</div>
-	<form class="container" role="form">
+	<form class="container" role="form" method="post">
+		<input type="hidden" name="<?= Config::get('security.csrf_token_key') ?>" value="<?= Security::fetch_token() ?>">
 		<div class="row">
 			<div class="col-md-8">
 				<?php foreach ( $post->form_map('core') as $name => $property ): ?>
