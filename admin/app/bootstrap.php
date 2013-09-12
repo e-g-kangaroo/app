@@ -4,9 +4,11 @@ require COREPATH.'classes'.DIRECTORY_SEPARATOR.'autoloader.php';
 class_alias('Fuel\\Core\\Autoloader', 'Autoloader');
 
 require COREPATH.'bootstrap.php';
-require APPPATH.'base.php';
+require ADMINPATH.'base.php';
 
-Autoloader::add_classes(array());
+Autoloader::add_classes(array(
+	'Html' => ADMINPATH.'classes/html.php',
+));
 
 Autoloader::register();
 

@@ -20,6 +20,9 @@ return array(
 			'orm',
 			'skyroof',
 			'post'
+		),
+		'config' => array(
+			'post'
 		)
 	),
 );

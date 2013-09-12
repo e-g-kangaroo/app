@@ -13,6 +13,11 @@
 				<div class="navbar-header">
 				</div>
 				<nav class="collapse navbar-collapse navbar-ex1-collapse">
+					<ul class="nav navbar-nav">
+						<?php foreach (Config::get('post.types', array()) as $post_type): ?>
+						<li><?= Html::link_to_type($post_type) ?></li>
+						<?php endforeach; ?>
+					</ul>
 				</nav>
 			</div>
 		</header>
