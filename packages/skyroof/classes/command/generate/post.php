@@ -76,6 +76,34 @@ class Generate_Post extends Generate
 			$properties_output .= "\t\t'{$name}' => array( {$field_opts}),\n";
 		}
 
+		$validation_output = '';
+
+		foreach ( $fields as $name => $field )
+		{
+			$field_rules = array('');
+
+			if ( ! array_key_exists('null', $field) or ! $field['numm'] )
+			{
+				$field_rules[] = 'required';
+			}
+			else
+			{
+				$field_rules[] = 'regard_null';
+			}
+
+			if ( $field['type'] == 'int' )
+			{
+				$field_rules['valid_string[numeric]'];
+			}
+
+			if ( $field['type'] == 'datetime' )
+			{
+				$field_rules['valid_datetime'];
+			}
+
+			$properties_output .= "\t\t\$val->add_field('{$name}', '".implode('|', $field_rules)."');\n";
+		}
+
 		$ouput_post = <<<POST
 <?php
 
@@ -86,6 +114,13 @@ class Model_{$post_type_h} extends Model
 	protected static \$_properties = array(
 {$properties_output}
 	);
+
+	public static function validation(\$factory = null)
+	{
+		$val = \Validation::forge(\$factory);
+
+		return $val;
+	}
 }
 POST;
 
