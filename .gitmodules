@@ -7,3 +7,6 @@
 [submodule "packages/orm"]
 	path = packages/orm
 	url = git://github.com/fuel/orm.git
+[submodule "admin"]
+	path = admin
+	url = git://github.com/skyroof/admin.git
