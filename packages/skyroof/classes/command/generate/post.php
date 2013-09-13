@@ -93,15 +93,15 @@ class Generate_Post extends Generate
 
 			if ( $field['type'] == 'int' )
 			{
-				$field_rules['valid_string[numeric]'];
+				$field_rules[] = 'valid_string[numeric]';
 			}
 
 			if ( $field['type'] == 'datetime' )
 			{
-				$field_rules['valid_datetime'];
+				$field_rules[] = 'valid_datetime';
 			}
 
-			$properties_output .= "\t\t\$val->add_field('{$name}', '".implode('|', $field_rules)."');\n";
+			$validation_output .= "\t\t\$val->add_field('{$name}', '".implode('|', $field_rules)."');\n";
 		}
 
 		$ouput_post = <<<POST
@@ -112,14 +112,15 @@ namespace Post;
 class Model_{$post_type_h} extends Model
 {
 	protected static \$_properties = array(
-{$properties_output}
-	);
+		'id',
+{$properties_output}	);
 
 	public static function validation(\$factory = null)
 	{
-		$val = \Validation::forge(\$factory);
+		\$val = \Validation::forge(\$factory)->add_callable('Model_{$post_type_h}');
 
-		return $val;
+{$validation_output}
+		return \$val;
 	}
 }
 POST;
@@ -127,7 +128,7 @@ POST;
 		static::create(PKGPATH.'post/classes/model/'.strtolower($post_type).'.php', $ouput_post);
 
 		\Config::load('post', true);
-		\Config::set('post.types', \Arr::merge(array($type), \Config::get('post.types')));
+		\Config::set('post.types', \Arr::unique(\Arr::merge(array($type), \Config::get('post.types'))));
 
 		if ( $build )
 		{
