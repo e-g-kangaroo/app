@@ -9,3 +9,5 @@
 /vendor/*
 !/vendor/.gitkeep
 /composer.lock
+
+/common/config/crypt.php

@@ -57,4 +57,12 @@ abstract class Model extends \Orm\Model
 
 		return parent::find($id, $options);
 	}
+
+
+	public static function find_piblished($id = null, array $options = array())
+	{
+		$options = \Arr::merge($options, static::$_publish_conditions);
+
+		return parent::find($id, $options);
+	}
 }
