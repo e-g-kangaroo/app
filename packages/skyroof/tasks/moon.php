@@ -4,15 +4,15 @@ namespace Fuel\Tasks;
 
 class Moon
 {
-	public function build($target = null)
+	public function create($target = null)
 	{
-		if ( method_exists($this, 'build_'.$target) )
+		if ( method_exists($this, 'create_'.$target) )
 		{
-			call_user_func(array($this, 'build_'.$target));
+			call_user_func(array($this, 'create_'.$target));
 		}
 	}
 
-	public function build_options()
+	public function create_options()
 	{
     // load skyroof config
     \Config::load('skyroof', true);
@@ -47,4 +47,5 @@ class Moon
         return \Cli::color('Success! Your options table has been created! Your current option driver type is set to '.\Config::get('skyroof.options.driver').'. In order to use the table you just created to manage your options, you will need to set your driver type to "db" in your option config file.', 'green');
     }
 	}
+
 }

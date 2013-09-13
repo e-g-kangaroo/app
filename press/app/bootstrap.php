@@ -12,4 +12,4 @@ Autoloader::register();
 Fuel::$env = (isset($_SERVER['FUEL_ENV']) ? $_SERVER['FUEL_ENV'] : Fuel::DEVELOPMENT);
 Fuel::init('config.php');
 
-Finder::instance()->add_path(realpath(__DIR__.'/../../common/').DIRECTORY_SEPARATOR, 0);
+Finder::instance()->add_path(COMMONPATH, 0);
