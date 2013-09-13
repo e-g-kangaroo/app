@@ -1,7 +1,7 @@
-/*/app/logs/*/*/*
-/*/app/cache/*/*
-/*/app/tmp/*
-!/*/app/tmp/.gitkeep
+/press/app/logs/*/*/*
+/press/app/cache/*/*
+/press/app/tmp/*
+!/press/app/tmp/.gitkeep
 
 /packages/post/classes/model/*
 /packages/post/config/post.php
