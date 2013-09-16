@@ -8,7 +8,22 @@ if (substr(php_sapi_name(), 0, 3) == 'cgi')
 error_reporting(-1);
 ini_set('display_errors', 1);
 define('DOCROOT', __DIR__.DIRECTORY_SEPARATOR);
-define('APPPATH', realpath(__DIR__.'/press/app/').DIRECTORY_SEPARATOR);
+define('PRESSPATH', realpath(__DIR__.'/press/app/').DIRECTORY_SEPARATOR);
+define('ADMINPATH', realpath(__DIR__.'/admin/app/').DIRECTORY_SEPARATOR);
+
+if ( ! isset($_SERVER['SKYROOF_MODE']) or $_SERVER['SKYROOF_MODE'] == 'press' )
+{
+	define('APPPATH', PRESSPATH);
+}
+else if ( $_SERVER['SKYROOF_MODE'] == 'admin' )
+{
+	define('APPPATH', ADMINPATH);
+}
+else
+{
+	die('Invalid env, SKYROOF_MODE');
+}
+
 define('PKGPATH', realpath(__DIR__.'/packages/').DIRECTORY_SEPARATOR);
 define('COREPATH', realpath(__DIR__.'/core/').DIRECTORY_SEPARATOR);
 define('COMMONPATH', realpath(__DIR__.'/common/').DIRECTORY_SEPARATOR);
