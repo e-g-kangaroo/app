@@ -128,7 +128,7 @@ POST;
 		static::create(PKGPATH.'post/classes/model/'.strtolower($post_type).'.php', $ouput_post);
 
 		\Config::load('post', true);
-		\Config::set('post.types', \Arr::unique(\Arr::merge(array($type), \Config::get('post.types'))));
+		\Config::set('post.types', \Arr::unique(\Arr::merge(array($post_type), \Config::get('post.types'))));
 
 		if ( $build )
 		{
