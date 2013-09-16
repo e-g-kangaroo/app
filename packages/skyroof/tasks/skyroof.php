@@ -4,6 +4,11 @@ namespace Fuel\Tasks;
 
 class Skyroof
 {
+	public function install()
+	{
+		\Oil\Command::init(array('oil', 'r', 'moon:create', 'account_knowlarge'));
+	}
+
 	public function generate()
 	{
 		$args = func_get_args();

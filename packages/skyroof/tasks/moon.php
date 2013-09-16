@@ -10,6 +10,10 @@ class Moon
 		{
 			call_user_func(array($this, 'create_'.$target));
 		}
+		else
+		{
+			\Cli::write('Invalid moon command.', 'red');
+		}
 	}
 
 	public function create_options()
@@ -46,6 +50,34 @@ class Moon
     {
         return \Cli::color('Success! Your options table has been created! Your current option driver type is set to '.\Config::get('skyroof.options.driver').'. In order to use the table you just created to manage your options, you will need to set your driver type to "db" in your option config file.', 'green');
     }
+	}
+
+	public function create_account_knowlarge()
+	{
+    // load skyroof config
+    \Config::load('skyroof', true);
+
+		$config = array_merge(array(
+			'key' => 'username',
+			'target' => 'password',
+		), \Config::get('auth.knowlarge.account', array()));
+
+    if (\DBUtil::table_exists(\Config::get('auth.knowlarge.account.table', 'accounts')))
+    {
+        return \Cli::write('Accounts table already exists.');
+    }
+
+    // create the option table using the table name from the config file
+    \DBUtil::create_table(\Config::get('auth.knowlarge.account.table', 'accounts'), array(
+			'id' => array('type' => 'int', 'constraint' => 11, 'auto_increment' => true),
+			$config['key'] => array('type' => 'varchar', 'constraint' => 32),
+			'salt' => array('type' => 'varchar', 'constraint' => 2),
+			$config['target'] => array('type' => 'varchar', 'constraint' => 40),
+			'created_at' => array('type' => 'int', 'constraint' => 11, 'null' => true),
+			'updated_at' => array('type' => 'int', 'constraint' => 11, 'null' => true)
+    ), array('id'), false, 'InnoDB', \Config::get('db.default.charset'));
+
+    \Cli::write('Success! Your accounts table has been created!', 'green');
 	}
 
 }
