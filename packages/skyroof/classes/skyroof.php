@@ -2,7 +2,7 @@
 
 class Skyroof {
 
-	protected static $version = '0.0.0';
+	protected static $version = '0.1.0';
 
 	public static function version()
 	{
