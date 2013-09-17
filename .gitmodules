@@ -10,3 +10,6 @@
 [submodule "admin"]
 	path = admin
 	url = git://github.com/skyroof/admin.git
+[submodule "packages/skyroof"]
+	path = packages/skyroof
+	url = git://github.com/skyroof/skyroof.git
