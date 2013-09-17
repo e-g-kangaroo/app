@@ -11,20 +11,21 @@ define('DOCROOT', __DIR__.DIRECTORY_SEPARATOR);
 define('PRESSPATH', realpath(__DIR__.'/press/app/').DIRECTORY_SEPARATOR);
 define('ADMINPATH', realpath(__DIR__.'/admin/app/').DIRECTORY_SEPARATOR);
 
-if ( ! isset($_SERVER['SKYROOF_ENV']) or $_SERVER['SKYROOF_ENV'] == 'press' )
+if ( ! array_key_exists('SKYROOF_ENV', $_SERVER) or $_SERVER['SKYROOF_ENV'] == 'press' )
 {
 	define('APPPATH', PRESSPATH);
+	define('SKYROOF_ENV', 'press');
 }
 else if ( $_SERVER['SKYROOF_ENV'] == 'admin' )
 {
 	define('APPPATH', ADMINPATH);
+	define('SKYROOF_ENV', 'admin');
 }
 else
 {
 	die('Invalid env, SKYROOF_ENV');
 }
 
-define('SKYROOF_ENV', $_SERVER['SKYROOF_ENV']);
 define('PKGPATH', realpath(__DIR__.'/packages/').DIRECTORY_SEPARATOR);
 define('COREPATH', realpath(__DIR__.'/core/').DIRECTORY_SEPARATOR);
 define('COMMONPATH', realpath(__DIR__.'/common/').DIRECTORY_SEPARATOR);
