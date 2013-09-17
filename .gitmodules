@@ -13,3 +13,6 @@
 [submodule "packages/skyroof"]
 	path = packages/skyroof
 	url = git://github.com/skyroof/skyroof.git
+[submodule "packages/airplane"]
+	path = packages/airplane
+	url = git://github.com/skyroof/airplane.git
