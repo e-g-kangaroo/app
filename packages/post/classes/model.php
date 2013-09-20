@@ -58,10 +58,28 @@ abstract class Model extends \Orm\Model
 		return parent::find($id, $options);
 	}
 
-	public static function find_piblished($id = null, array $options = array())
+	public static function find_published($id = null, array $options = array())
 	{
 		$options = \Arr::merge($options, static::$_publish_conditions);
 
 		return parent::find($id, $options);
+	}
+
+	public static function _validation_valid_datetime($val)
+	{
+		\Log::info($val);
+
+		return static::_empty($val) or strtotime($val);
+	}
+
+	/**
+	 * Special empty method because 0 and '0' are non-empty values
+	 *
+	 * @param   mixed
+	 * @return  bool
+	 */
+	public static function _empty($val)
+	{
+		return ($val === false or $val === null or $val === '' or $val === array());
 	}
 }
