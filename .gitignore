@@ -4,6 +4,7 @@
 !/press/app/tmp/.gitkeep
 
 /packages/post/classes/model/*
+/packages/post/tests/*
 /packages/post/config/post.php
 
 /vendor/*
