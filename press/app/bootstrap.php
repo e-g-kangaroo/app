@@ -1,9 +1,6 @@
 <?php
 
-require COREPATH.'classes'.DIRECTORY_SEPARATOR.'autoloader.php';
-class_alias('Fuel\\Core\\Autoloader', 'Autoloader');
-
-require COREPATH.'bootstrap.php';
+require COMMONPATH.'bootstrap.php';
 
 Autoloader::add_classes(array());
 
