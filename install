@@ -1,0 +1,5 @@
+#!/bin/sh
+
+php oil r install
+SKYROOF_ENV=admin php oil r install
+php oil r skyroof:install
