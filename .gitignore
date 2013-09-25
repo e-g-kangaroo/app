@@ -4,8 +4,9 @@
 !/press/app/tmp/.gitkeep
 
 /packages/post/classes/model/*
-/packages/post/tests/*
-/packages/post/config/post.php
+/packages/post/tests/model/*
+/packages/post/migrations/*
+!/packages/post/migrations/.gitkeep
 
 /vendor/*
 !/vendor/.gitkeep

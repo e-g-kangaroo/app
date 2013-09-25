@@ -67,8 +67,6 @@ abstract class Model extends \Orm\Model
 
 	public static function _validation_valid_datetime($val)
 	{
-		\Log::info($val);
-
 		return static::_empty($val) or strtotime($val);
 	}
 
