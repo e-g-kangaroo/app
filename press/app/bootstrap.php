@@ -10,3 +10,20 @@ Fuel::$env = (isset($_SERVER['FUEL_ENV']) ? $_SERVER['FUEL_ENV'] : Fuel::DEVELOP
 Fuel::init('config.php');
 
 Finder::instance()->add_path(COMMONPATH, 0);
+
+/**
+ * Load skyroof package.
+ */
+Package::load('skyroof');
+
+/**
+ * Load ORM package.
+ *
+ * @see http://fuelphp.com/docs/packages/orm/intro.html
+ */
+Package::load('orm');
+
+/**
+ * Load post package.
+ */
+Package::load('post');
