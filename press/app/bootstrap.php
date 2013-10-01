@@ -24,6 +24,6 @@ Package::load('skyroof');
 Package::load('orm');
 
 /**
- * Load post package.
+ * Load structure package.
  */
-Package::load('post');
+Package::load('structure');

@@ -3,10 +3,10 @@
 /press/app/tmp/*
 !/press/app/tmp/.gitkeep
 
-/packages/post/classes/model/*
-/packages/post/tests/model/*
-/packages/post/migrations/*
-!/packages/post/migrations/.gitkeep
+/packages/structure/classes/model/*
+/packages/structure/tests/model/*
+/packages/structure/migrations/*
+!/packages/structure/migrations/.gitkeep
 
 /vendor/*
 !/vendor/.gitkeep

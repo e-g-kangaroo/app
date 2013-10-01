@@ -1,5 +1,5 @@
 <?php
 
-Autoloader::add_namespace('Post', realpath(__DIR__.'/classes').DIRECTORY_SEPARATOR);
+Autoloader::add_namespace('Structure', realpath(__DIR__.'/classes').DIRECTORY_SEPARATOR);
 
-Config::load('post', true);
+Config::load('structure', true);

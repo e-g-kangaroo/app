@@ -6,7 +6,7 @@ class Test_Model extends TestCase
 	{
 		$current_time = time();
 		$val = \Validation::forge('test_validation_datetime')
-			->add_callable('\\Post\\Model');
+			->add_callable('\\Structure\\Model');
 
 		$trust_data = array(
 			'datetime' => date('r', $current_time)

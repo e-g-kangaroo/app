@@ -1,6 +1,6 @@
 <?php
 
-namespace Post;
+namespace Structure;
 
 abstract class Model extends \Orm\Model
 {

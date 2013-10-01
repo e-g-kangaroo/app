@@ -14,8 +14,8 @@
 		<testsuite name="app">
 			<directory suffix=".php">tests</directory>
 		</testsuite>
-		<testsuite name="post">
-			<directory suffix=".php">../../packages/post/tests</directory>
+		<testsuite name="structure">
+			<directory suffix=".php">../../packages/structure/tests</directory>
 		</testsuite>
 	</testsuites>
 </phpunit>
